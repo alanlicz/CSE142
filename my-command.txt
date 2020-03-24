@@ -1,0 +1,6 @@
+FACTORIAL
+
+FACTORIAL takes one integer that has to be greater or equal to one. Then it returns the factorial result of that number
+
+Input: FACTORIAL 4
+Output: 24
