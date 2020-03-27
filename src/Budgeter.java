@@ -7,6 +7,7 @@
 // This program will output a cafe wall illusion image
 import java.util.*;
 
+
 public class Budgeter {
 
     // Define how many days in a month
