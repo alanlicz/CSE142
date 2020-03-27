@@ -1,9 +1,2 @@
-Betty Boop: [83, 67, 70, 67] = INFP
-Snoopy: [99, 94, 96, 94] = INFP
-Bugs Bunny: [99, 95, 97, 96] = INFP
-Daffy Duck: [99, 94, 97, 96] = INFP
-The frumious bandersnatch: [99, 93, 97, 96] = INFP
-Minnie Mouse: [99, 92, 97, 96] = INFP
-Luke Skywalker: [99, 91, 97, 96] = INFP
-Han Solo: [99, 90, 97, 96] = INFP
-Princess Leia: [99, 89, 97, 96] = INFP
+Betty Boop: [90, 15, 10, 10] = ISTJ
+Snoopy: 

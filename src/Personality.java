@@ -24,8 +24,6 @@ public class Personality {
         System.out.print("output file name? ");
         String outputFile = console.nextLine();
 
-        int[] aCount = new int[DIMENSION];
-        int[] bCount = new int[DIMENSION];
         int[] bPercentage = new int[DIMENSION];
         String personality = "";
         File f = new File(inputFile);
@@ -33,6 +31,8 @@ public class Personality {
         Scanner fileInput = new Scanner(f);
 
         while (fileInput.hasNextLine()){
+            int[] aCount = new int[]{0, 0, 0, 0};
+            int[] bCount = new int[]{0, 0, 0, 0};
             String name = fileInput.nextLine();
             out.print(name + ": ");
             String answer = fileInput.nextLine();
@@ -40,8 +40,7 @@ public class Personality {
             int[] bPercentageValue = percentage(aCount, bCount, bPercentage, out);
             out.print(whichType(bPercentageValue, personality));
             out.println();
-            aCount = new int[]{0, 0, 0, 0};
-            bCount = new int[]{0, 0, 0, 0};
+
             // clears aCount and bCount for next person
         }
     }
