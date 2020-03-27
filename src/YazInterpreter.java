@@ -26,17 +26,17 @@ public class YazInterpreter {
             else if (answer.equals("i")) {
                 interpret(input);
             }
-        };
+        }
     }
 
     /**
      * print out the welcome message
      */
     public static void printMessage(){
-        System.out.print("Welcome to the YazInterpreter!\n");
-        System.out.print("You may interpret a YazLang program and output\n");
-        System.out.print("the results to a .txt file or enter console YazInteractions\n");
-        System.out.print("mode to run single commands of YazLang.\n");
+        System.out.println("Welcome to the YazInterpreter!");
+        System.out.println("You may interpret a YazLang program and output");
+        System.out.println("the results to a .txt file or enter console YazInteractions");
+        System.out.println("mode to run single commands of YazLang.");
         System.out.println();
     }
 
