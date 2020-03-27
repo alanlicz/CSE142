@@ -7,101 +7,94 @@
 // This program will out put a song which has six verse including one custom verse
 
 public class Song {
-    public static void SheWillDie(){
+
+    public static void main(String[] args) {
+        firstVerse();
+        secondVerse();
+        thirdVerse();
+        fourthVerse();
+        fifthVerse();
+        sixthVerse();
+        seventhVerse();
+    }
+
+    public static void sheWillDie(){
         System.out.println("I don't know why she swallowed that fly,");
         System.out.println("Perhaps she'll die.");
     }
 
-    public static void SwallowTheSpider(){
+    public static void swallowTheSpider(){
         System.out.println("She swallowed the spider to catch the fly,");
+        sheWillDie();
     }
 
-    public static void SwallowTheBird(){
+    public static void swallowTheBird(){
         System.out.println("She swallowed the bird to catch the spider,");
+        swallowTheSpider();
     }
 
-    public static void SwallowTheCat(){
+    public static void swallowTheCat(){
         System.out.println("She swallowed the cat to catch the bird,");
+        swallowTheBird();
     }
 
-    public static void SwallowTheDog(){
+    public static void swallowTheDog(){
         System.out.println("She swallowed the dog to catch the cat,");
+        swallowTheCat();
     }
 
-    public static void SwallowTheWolf(){
+    public static void swallowTheWolf(){
         System.out.println("She swallowed the wolf to catch the dog,");
+        swallowTheDog();
     }
 
-    public static void FirstVerse(){
+    public static void firstVerse(){
         System.out.println("There was an old woman who swallowed a fly.");
-        SheWillDie();
+        sheWillDie();
         System.out.println();
     }
 
-    public static void SecondVerse(){
+    public static void secondVerse(){
         System.out.println("There was an old woman who swallowed a spider,");
         System.out.println("That wriggled and iggled and jiggled inside her.");
-        SwallowTheSpider();
-        SheWillDie();
+        swallowTheSpider();
         System.out.println();
     }
 
-    public static void ThirdVerse(){
+    public static void thirdVerse(){
         System.out.println("There was an old woman who swallowed a bird,");
         System.out.println("How absurd to swallow a bird.");
-        SwallowTheBird();
-        SwallowTheSpider();
-        SheWillDie();
+        swallowTheBird();
         System.out.println();
     }
 
-    public static void FourthVerse(){
+    public static void fourthVerse(){
         System.out.println("There was an old woman who swallowed a cat,");
         System.out.println("Imagine that to swallow a cat.");
-        SwallowTheCat();
-        SwallowTheBird();
-        SwallowTheSpider();
-        SheWillDie();
+        swallowTheCat();
         System.out.println();
     }
 
-    public static void FifthVerse(){
+    public static void fifthVerse(){
         System.out.println("There was an old woman who swallowed a dog,");
         System.out.println("What a hog to swallow a dog.");
-        SwallowTheDog();
-        SwallowTheCat();
-        SwallowTheBird();
-        SwallowTheSpider();
-        SheWillDie();
+        swallowTheDog();
         System.out.println();
     }
 
-    public static void SixthVerse(){
+    public static void sixthVerse(){
         System.out.println("There was an old woman who swallowed a wolf,");
         System.out.println("It takes a while to swallow a wolf.");
-        SwallowTheWolf();
-        SwallowTheDog();
-        SwallowTheCat();
-        SwallowTheBird();
-        SwallowTheSpider();
-        SheWillDie();
+        swallowTheWolf();
         System.out.println();
 
     }
 
-    public static void SeventhVerse(){
+    public static void seventhVerse(){
         System.out.println("There was an old woman who swallowed a horse,");
         System.out.println("She died of course.");
     }
 
-    public static void main(String[] args) {
-        FirstVerse();
-        SecondVerse();
-        ThirdVerse();
-        FourthVerse();
-        FifthVerse();
-        SixthVerse();
-        SeventhVerse();
-    }
+
 
 }
