@@ -18,24 +18,6 @@ public class GuessingGame {
         Random r = new Random();
         Scanner console = new Scanner(System.in);
         haikuPoem();
-        createGame(r, console);
-    }
-
-    /**
-     * Print out the haiku poem
-     */
-    public static void haikuPoem(){
-        System.out.println("Here we go again.");
-        System.out.println("Guessing a number is truly fun.");
-        System.out.println("Give it a try now.");
-    }
-
-    /**
-     * Initialize the game and determine if game need to continue
-     * @param r generates the random number
-     * @param console create the console that receive input
-     */
-    public static void createGame(Random r, Scanner console){
         int totalGames = 1;
         int totalGuess = 0;
         int bestGame = 1000000;
@@ -43,12 +25,11 @@ public class GuessingGame {
 
         boolean flag = true;
         // Flag indicates if the game needs to continue or stop
-        int randomNumber;
         int guessResult;
 
         while(flag){
-            randomNumber = r.nextInt(MAXNUM) + 1;
-            guessResult = makeGuess(console, randomNumber);
+
+            guessResult = makeGuess(console, r);
             totalGuess += guessResult;
             if (guessResult < bestGame){
                 bestGame = guessResult;
@@ -69,12 +50,22 @@ public class GuessingGame {
     }
 
     /**
+     * Print out the haiku poem
+     */
+    public static void haikuPoem(){
+        System.out.println("Here we go again.");
+        System.out.println("Guessing a number is truly fun.");
+        System.out.println("Give it a try now.");
+    }
+
+    /**
      * Play a guess game with user
      * @param console receive input
-     * @param randomNumber the random number generates by r
+     * @param r the Random class create random number
      * @return numbers of the guess
      */
-    public static int makeGuess(Scanner console, int randomNumber){
+    public static int makeGuess(Scanner console, Random r){
+        int randomNumber = r.nextInt(MAXNUM) + 1;
         System.out.println();
         System.out.printf("I'm thinking of a number between 1 and %d...\n", MAXNUM);
         int input = 0;
@@ -85,19 +76,16 @@ public class GuessingGame {
             input = console.nextInt();
             if (input < randomNumber) {
                 System.out.println("It's higher.");
-            }
-            else if (input > randomNumber) {
+            } else if (input > randomNumber) {
                 System.out.println("It's lower.");
             }
-            else {
-                if (numGuesses == 1) {
-                    System.out.print("You got it right in 1 guess!");
-                }
-                else {
-                    System.out.printf("You got it right in %d guesses!\n", numGuesses);
-                }
-                }
-            }
+        }
+        if (numGuesses == 1) {
+            System.out.print("You got it right in 1 guess!");
+        }
+        else {
+            System.out.printf("You got it right in %d guesses!\n", numGuesses);
+        }
         return numGuesses;
     }
 
