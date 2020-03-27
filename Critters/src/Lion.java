@@ -12,9 +12,9 @@ import java.util.Random;
 
 public class Lion extends Critter{
 
-    int count;
-    Color color;
-
+    private int count;
+    private Random r = new Random();
+    private Color initialColor;
     public Lion(){
         this.count = 0;
     }
@@ -25,7 +25,7 @@ public class Lion extends Critter{
      * @return the action
      */
     public Critter.Action getMove(CritterInfo info) {
-        this.count += 1;
+        this.count = this.count + 1;
         if (info.getFront() == Critter.Neighbor.OTHER) {
             return Critter.Action.INFECT;
         } else if (info.getFront() == Neighbor.WALL || info.getRight() == Neighbor.WALL){
@@ -42,19 +42,21 @@ public class Lion extends Critter{
      * @return return the color
      */
     public Color getColor() {
-
-        if ((this.count - 1) % 3 == 0){
-            this.color = getRandom();
+        if ((this.count - 1) % 3 == 0) {
+            Color randomColor = getRandom(r);
+            this.initialColor = randomColor;
+            return randomColor;
+        } else {
+            return this.initialColor;
         }
-        return this.color;
     }
 
     /**
      * display the critter in the window
      * @return what character should be displayed
      */
-    public static Color getRandom(){
-        Random r = new Random();
+    public static Color getRandom(Random r){
+
         int number = r.nextInt(3) + 1;
         if (number == 1){
             return Color.RED;
@@ -65,6 +67,10 @@ public class Lion extends Critter{
         }
     }
 
+    /**
+     * display Lion as L
+     * @return the display string
+     */
     public String toString() {
         return "L";
     }

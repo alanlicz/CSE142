@@ -11,7 +11,7 @@ import java.awt.*;
 
 public class Giant extends Critter{
 
-    int count;
+    private int count;
 
     public Giant(){
         this.count = 0;
@@ -47,11 +47,11 @@ public class Giant extends Critter{
      */
     public String toString() {
 
-        if ((this.count - 1) % 24 < 6){
+        if ((this.count) % 24 < 6){
             return "fee";
-        } else if ((this.count - 1) % 24 < 12){
+        } else if ((this.count) % 24 < 12){
             return "fie";
-        } else if ((this.count - 1) % 24 < 18){
+        } else if ((this.count) % 24 < 18){
             return "foe";
         } else {
             return "fum";

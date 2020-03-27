@@ -10,7 +10,7 @@ import java.awt.*;
 
 public class Husky extends Critter{
 
-    boolean face;
+    private boolean face;
 
     public Husky(){
         this.face = true;

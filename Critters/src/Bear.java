@@ -9,8 +9,8 @@
 import java.awt.*;
 
 public class Bear extends Critter{
-    boolean polar;
-    int count;
+    private boolean polar;
+    private int count;
 
     public Bear(boolean initialPolar){
         this.polar = initialPolar;
