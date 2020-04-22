@@ -14,7 +14,7 @@ public class Lion extends Critter{
 
     private int count;
     private Random r = new Random();
-    private Color initialColor;
+    private Color color;
     public Lion(){
         this.count = 0;
     }
@@ -25,12 +25,16 @@ public class Lion extends Critter{
      * @return the action
      */
     public Critter.Action getMove(CritterInfo info) {
+
+        if ((this.count - 2) % 3 == 0) {
+            color = getRandom(r);
+        }
         this.count = this.count + 1;
         if (info.getFront() == Critter.Neighbor.OTHER) {
             return Critter.Action.INFECT;
-        } else if (info.getFront() == Neighbor.WALL || info.getRight() == Neighbor.WALL){
+        } else if (info.getFront() == Neighbor.WALL || info.getRight() == Neighbor.WALL) {
             return Critter.Action.LEFT;
-        } else if (info.getFront() == Neighbor.SAME){
+        } else if (info.getFront() == Neighbor.SAME) {
             return Action.RIGHT;
         } else {
             return Action.HOP;
@@ -42,20 +46,14 @@ public class Lion extends Critter{
      * @return return the color
      */
     public Color getColor() {
-        if ((this.count - 1) % 3 == 0) {
-            Color randomColor = getRandom(r);
-            this.initialColor = randomColor;
-            return randomColor;
-        } else {
-            return this.initialColor;
-        }
+        return color;
     }
 
     /**
      * display the critter in the window
      * @return what character should be displayed
      */
-    public static Color getRandom(Random r){
+    public Color getRandom(Random r){
 
         int number = r.nextInt(3) + 1;
         if (number == 1){
